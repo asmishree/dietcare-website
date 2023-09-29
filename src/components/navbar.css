@@ -1,0 +1,23 @@
+.navbar-main{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.nav-links{
+    display: flex;
+    gap: 10px;
+}
+
+.nav-links a{
+    color: rgba(0, 0, 0, 0.8);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nav-links a.active {
+    color: green;
+    font-weight: 700;
+  }
+  
