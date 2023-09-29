@@ -1,0 +1,42 @@
+.mynav-link {
+  color: black;
+  font-size: 1.2rem;
+  margin: 0px 10px;
+  text-decoration: none;
+  font-weight: 500;
+}
+.active {
+  color: red;
+  font-weight: 700;
+}
+
+.slidermain {
+  position: relative;
+  height: 90vh;
+}
+.slidermain img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover; 
+  object-position: top;
+}
+.myslider {
+  position: absolute;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.434);
+  
+  bottom: 40%;
+  padding: 50px 100px;
+  left: 50%; /* Horizontal centering */
+  transform: translateX(-50%); /* Move back by half of its own width */
+  z-index: 2;
+  text-align: center;
+}
+
+.myslider h2{
+  font-size: 4rem;
+}
+.myslider p{
+  font-size: 2rem;
+  color: white;
+}

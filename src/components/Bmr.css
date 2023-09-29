@@ -1,0 +1,109 @@
+/* BmrCalculator.css */
+.bmr-main {
+  background-image: url('https://res.cloudinary.com/dyun4cr6u/image/upload/v1695553077/cld-sample-4.jpg');
+   padding : 20px
+}
+.bmr-calculator {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* 1 part for chart, 2 parts for content */
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+   input,select {
+    background-color: transparent;
+    outline: 1px solid rgba(0, 0, 0, 0.464);
+  }
+  input::placeholder,
+select::placeholder {
+    color: black;
+}
+
+  .chart {
+    padding: 20px;
+    background-color: #fff; /* Add your chart background here */
+    border-right: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .chart-placeholder {
+    font-size: 24px;
+    color: #ccc;
+  }
+  
+  
+  .content {
+    padding: 20px;
+  }
+  
+  .description {
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    align-items: center;
+  }
+  
+  p {
+    font-size: 10px;
+    color: #000000;
+  }
+  
+  .input-group {
+    margin-bottom: 10px;
+  }
+  
+  label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  input[type="number"],
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #058596;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #041f3b;
+  }
+  
+  .bmr-result {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 24px;
+    align-items: center;
+  }
+  
+  p {
+    font-size: 15px;
+    font-family: "Lucida Console", "Courier New", monospace;
+    color: #050505;
+    align-items: center;
+  }
+/* BmrCalculator.css */
+
