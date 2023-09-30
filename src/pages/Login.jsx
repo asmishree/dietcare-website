@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import API from './API';
 import axios from 'axios';
 import toast from 'react-hot-toast';
@@ -43,6 +43,7 @@ function Login() {
         <input required name="password" type='password' value={password} onChange={(e) => setPassword(e.target.value)} />
         <button type="submit">Login</button>
       </form>
+      <Link to={"/signup"}>Need to Create an Account ?</Link>
     </div>
     
   )

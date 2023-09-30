@@ -1,14 +1,4 @@
-.mynav-link {
-  color: black;
-  font-size: 1.2rem;
-  margin: 0px 10px;
-  text-decoration: none;
-  font-weight: 500;
-}
-.active {
-  color: red;
-  font-weight: 700;
-}
+
 
 .slidermain {
   position: relative;
@@ -27,8 +17,8 @@
   
   bottom: 40%;
   padding: 50px 100px;
-  left: 50%; /* Horizontal centering */
-  transform: translateX(-50%); /* Move back by half of its own width */
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 2;
   text-align: center;
 }
