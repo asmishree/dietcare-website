@@ -13,10 +13,7 @@ function Signup() {
         <input required name="age" type='number' />
         <p>Enter your gender</p>
         <input required name="gender" type='text' />
-        <p>Enter your height</p>
-        <input name="height" type='number' />
-        <p>Enter your weight</p>
-        <input required name="weight" type='number' />
+
         <p>Enter your password</p>
         <input required name="password" type='password' />
         <button type="submit">Signup</button>

@@ -19,6 +19,7 @@ function Navbar() {
           <NavLink to="/bmi">BMICalculator</NavLink>
 
           <NavLink to="/bmr">BMRCalculator</NavLink>
+          <NavLink to="/bodyfat">BodyFatCalculator</NavLink>
 
           <NavLink to="/about">About</NavLink>
         </div>

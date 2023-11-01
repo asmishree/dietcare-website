@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup"
 import Dietplan from "./pages/Dietplan";
+import Bodyfat from "./pages/Bodyfat";
 import { Route, Routes, useNavigate, useLocation } from "react-router-dom";
 import { Toaster, toast } from "react-hot-toast";
 import Profile from "./pages/Profile";
@@ -34,6 +35,7 @@ function App() {
         <Route path="/bmi" element={<Bmi />} />
         <Route path="/dietplan" element={<Dietplan />} />
         <Route path="/bmr" element={<Bmr />} />
+        <Route path="/Bodyfat" element={<Bodyfat />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />

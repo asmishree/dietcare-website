@@ -14,10 +14,10 @@ class BmrCalculator extends Component {
       bmr: null,
     };
   }
+
   handleInputChange = (e) => {
     const { name, value } = e.target;
-    
-    // Check if the input value is a positive number before updating the state
+
     if (name === "age" && value >= 0) {
       this.setState({
         [name]: value,
@@ -33,11 +33,27 @@ class BmrCalculator extends Component {
         [name]: value,
       });
     }
+    if (name === "gender") {
+      this.setState({
+        gender: value,
+      });
+    }
   };
-  
-  
+
+  handleActivityLevelChange = (e) => {
+    const { name, value } = e.target;
+    this.setState({
+      [name]: value,
+    });
+  };
+
   calculateBMR = () => {
     const { age, gender, weight, height, activityLevel } = this.state;
+
+    if (age === '' || weight === '' || height === '') {
+      return;
+    }
+
     let bmr = null;
 
     if (gender === 'male') {
@@ -70,90 +86,84 @@ class BmrCalculator extends Component {
   };
 
   render() {
-    const { bmr } = this.state;
+    const { bmr, activityLevel } = this.state;
 
     return (
       <div className='bmr-main'>
-        <div className="bmr-calculator" >
-        <div className="description">
-          <h1 >BMR Calculator</h1>
-          
+        <div className="bmr-calculator">
+          <div className="description">
+            <h1>BMR Calculator</h1>
+          </div>
+          <form>
+            <div className="input-group">
+              <label>Age (years):</label>
+              <input
+                type="number"
+                name="age"
+                placeholder="Enter your age"
+                value={this.state.age}
+                onChange={this.handleInputChange}
+              />
+            </div>
+            <div className="input-group">
+              <label>Gender:</label>
+              <select
+                name="gender"
+                value={this.state.gender}
+                onChange={this.handleInputChange}
+              >
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+            <div className="input-group">
+              <label>Weight (kg):</label>
+              <input
+                type="number"
+                name="weight"
+                placeholder="Enter your weight"
+                value={this.state.weight}
+                onChange={this.handleInputChange}
+              />
+            </div>
+            <div className="input-group">
+              <label>Height (cm):</label>
+              <input
+                type="number"
+                name="height"
+                placeholder="Enter your height"
+                value={this.state.height}
+                onChange={this.handleInputChange}
+              />
+            </div>
+            <div className="input-group">
+              <label>Activity Level:</label>
+              <select
+                name="activityLevel"
+                value={activityLevel}
+                onChange={this.handleActivityLevelChange} 
+              >
+                <option value="sedentary">Sedentary</option>
+                <option value="lightlyActive">Lightly Active</option>
+                <option value="moderatelyActive">Moderately Active</option>
+                <option value="veryActive">Very Active</option>
+                <option value="superActive">Super Active</option>
+              </select>
+            </div>
+            <button type="button" onClick={this.calculateBMR}>
+              Calculate BMR
+            </button>
+          </form>
+          {bmr !== null && (
+            <div className="bmr-result">
+              <h2>Your BMR is:</h2>
+              <p>{bmr.toFixed(2)} calories per day</p>
+            </div>
+          )}
         </div>
-        <form>
-          <div className="input-group">
-            <label>Age (years):</label>
-            <input
-              type="number"
-              name="age"
-              placeholder="Enter your age"
-              value={this.state.age}
-              onChange={this.handleInputChange}
-            />
-          </div>
-          <div className="input-group">
-            <label>Gender:</label>
-            <select
-              name="gender"
-              value={this.state.gender}
-              onChange={this.handleInputChange}
-            >
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-            </select>
-          </div>
-          <div className="input-group">
-            <label>Weight (kg):</label>
-            <input
-              type="number"
-              name="weight"
-              placeholder="Enter your weight"
-              value={this.state.weight}
-              onChange={this.handleInputChange}
-            />
-          </div>
-          <div className="input-group">
-            <label>Height (cm):</label>
-            <input
-              type="number"
-              name="height"
-              placeholder="Enter your height"
-              value={this.state.height}
-              onChange={this.handleInputChange}
-            />
-          </div>
-          <div className="input-group">
-            <label>Activity Level:</label>
-            <select
-              name="activityLevel"
-              value={this.state.activityLevel}
-              onChange={this.handleInputChange}
-            >
-              <option value="sedentary">Sedentary</option>
-              <option value="lightlyActive">Lightly Active</option>
-              <option value="moderatelyActive">Moderately Active</option>
-              <option value="veryActive">Very Active</option>
-              <option value="superActive">Super Active</option>
-            </select>
-          </div>
-          <button type="button" onClick={this.calculateBMR}>
-            Calculate BMR
-          </button>
-        </form>
-        {bmr !== null && (
-          <div className="bmr-result">
-            <h2>Your BMR is:</h2>
-            <p>{bmr.toFixed(2)} calories per day</p>
-          </div>
-        )}
-        
-
-
-      </div>
       </div>
     );
   }
 }
 
 export default BmrCalculator;
-
-
